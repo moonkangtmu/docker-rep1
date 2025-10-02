@@ -1,14 +1,14 @@
 # Layer1: Use P
-FROM Node.js
+FROM node
 # Layer2: Set working directory
 WORKDIR /app
 # Layer3: Copy files
-COPY requirements.txt .
+# COPY requirements.txt .
 # Layer4: Run the app
-RUN -r requirements.txt
+# RUN -r requirements.txt
 # copy all files to the current directory
 COPY . .
 # define the environment variable: Expose port
-EXPOSE 5000
+EXPOSE 3000
 # Command to run app
-CMD ["Node.js”]
+CMD ["node", "index.js"]
